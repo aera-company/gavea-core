@@ -1,0 +1,199 @@
+{
+  "date": "2026-10-26",
+  "checks": [
+    "Servidor Python de produção inicia, encerra e reinicia com HTTP 200",
+    "Parser independente: 7 comandos, acentos e comando inválido",
+    "WebKit: WebGL real, núcleo, comandos, apresentação manual e zero exceções JS (não é teste do app Safari)",
+    "Falha real no carregamento do módulo 3D aciona fallback navegável",
+    "Recarregamento restaura 3D e link direto abre o núcleo correto",
+    "Composição final: CTAs acima da navegação em 1600, 1440, 1024 e 390 px",
+    "Tela cheia entra e sai no Chromium",
+    "Hashes de todos os arquivos originais auditados permanecem idênticos"
+  ],
+  "webkit": {
+    "state": {
+      "ready": true,
+      "visualMode": false,
+      "selected": "overview",
+      "mode": "intro",
+      "tour": {
+        "active": false,
+        "paused": false,
+        "index": 0
+      }
+    },
+    "diagnostics": {
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": false,
+        "step": 0,
+        "updates": 1,
+        "clock": 0.1,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.0022469637299502763,
+              0.005945142023690285,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              2.65
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.022264202770645742,
+              0.08498591700587924,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.01885454683461942,
+              0.0028548385528823755,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.008199991413854513,
+              -0.08469030892515596,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.02497118349419529,
+              -0.01162420999490324,
+              0
+            ],
+            "activity": 0
+          }
+        ]
+      },
+      "highlightedZone": null,
+      "flowActive": false,
+      "flowStep": 0,
+      "currentZone": "all",
+      "three": "180",
+      "quality": "alta",
+      "dpr": 1,
+      "viewport": [
+        1440,
+        900
+      ],
+      "drawCalls": 72,
+      "triangles": 108322,
+      "sampledFrames": 0,
+      "fps": null,
+      "p95FrameMs": null,
+      "meanSubmitMs": null,
+      "gpu": "Apple GPU",
+      "camera": [
+        28,
+        12.800000000000002,
+        38
+      ],
+      "target": [
+        0,
+        4.4,
+        0
+      ],
+      "webgl": "WebGL 2.0"
+    },
+    "errors": []
+  },
+  "fullscreen": true,
+  "originalChanged": []
+}

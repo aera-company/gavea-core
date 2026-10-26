@@ -1,0 +1,1077 @@
+{
+  "date": "2026-10-26",
+  "sequence": [
+    {
+      "ready": true,
+      "visualMode": false,
+      "selected": "brand",
+      "mode": "tour",
+      "tour": {
+        "active": true,
+        "paused": false,
+        "index": 1
+      },
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": true,
+        "step": 1,
+        "updates": 310,
+        "clock": 10.582,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              1.4516525600690415
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0098
+            ],
+            "head": [
+              -0.0024804631021123486,
+              0.014741126497160332,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              2.65
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.022156538973448256,
+              0.040609215453917706,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.019007736326488882,
+              -0.07246928060605724,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.007978058660198456,
+              -0.04811314415409725,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              1.4933119610783152,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0096
+            ],
+            "head": [
+              -0.024127142142440886,
+              0.011301262460753149,
+              0
+            ],
+            "activity": 0.028
+          }
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "visualMode": false,
+      "selected": "marketing",
+      "mode": "tour",
+      "tour": {
+        "active": true,
+        "paused": false,
+        "index": 2
+      },
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": true,
+        "step": 2,
+        "updates": 558,
+        "clock": 20.066,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              0.4858286442805996
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0101
+            ],
+            "head": [
+              -0.016779045784846035,
+              0.018910661264894765,
+              0
+            ],
+            "activity": 0.033
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              2.5751786058473107
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0099
+            ],
+            "head": [
+              0.02294570004015025,
+              0.0032255939530426033,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.000650390990291824,
+              -0.08339284450865114,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.023430847545006784,
+              -0.02074639078560967,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.016827429878712413,
+              0.08124463169434773,
+              0
+            ],
+            "activity": 0
+          }
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "visualMode": false,
+      "selected": "growth",
+      "mode": "tour",
+      "tour": {
+        "active": true,
+        "paused": false,
+        "index": 3
+      },
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": true,
+        "step": 3,
+        "updates": 790,
+        "clock": 29.515,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.02475464036013227,
+              0.08256357123966877,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              1.4704394539698011
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0082
+            ],
+            "head": [
+              -0.004922880195598363,
+              -0.004629636345212256,
+              0
+            ],
+            "activity": 0.036
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.451210471705667,
+              0.79,
+              3.3207633490301665
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0101
+            ],
+            "head": [
+              -0.020285922610406036,
+              -0.0028508827573827424,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.02112270416460541,
+              0.007184015064115879,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.004529819936407056,
+              0.0849542183136827,
+              0
+            ],
+            "activity": 0
+          }
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "visualMode": false,
+      "selected": "technology",
+      "mode": "tour",
+      "tour": {
+        "active": true,
+        "paused": false,
+        "index": 4
+      },
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": true,
+        "step": 4,
+        "updates": 1027,
+        "clock": 39.014,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.013169562463621588,
+              0.06986175939566426,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              2.65
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.014804909270711689,
+              -0.04473642892805955,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.543488276442311,
+              0.79,
+              2.9977910324519126
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.01
+            ],
+            "head": [
+              0.025202274765448056,
+              -0.0019861681556203464,
+              0
+            ],
+            "activity": 0.033
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              2.7202284795479548
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.01
+            ],
+            "head": [
+              -0.003256358562205262,
+              0.00902512630461877,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.02178399692623229,
+              0.07832763263280042,
+              0
+            ],
+            "activity": 0
+          }
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "visualMode": false,
+      "selected": "direction",
+      "mode": "tour",
+      "tour": {
+        "active": true,
+        "paused": false,
+        "index": 5
+      },
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": true,
+        "step": 5,
+        "updates": 1259,
+        "clock": 48.548,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.007135800013903611,
+              0.046168819500439946,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              2.65
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.024892553084943186,
+              -0.06888232073027865,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.011432353910324756,
+              -0.053301331637171746,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              1.68009729353415
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": true,
+            "footClearance": [
+              0.005,
+              0.0096
+            ],
+            "head": [
+              -0.015379979670038341,
+              0.015675803158090716,
+              0
+            ],
+            "activity": 0.033
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              0.5929785940237116,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": true,
+            "footClearance": [
+              0.0099,
+              0.005
+            ],
+            "head": [
+              0.023639378412213953,
+              0.011636085164972975,
+              0
+            ],
+            "activity": 0
+          }
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "visualMode": false,
+      "selected": "overview",
+      "mode": "closing",
+      "tour": {
+        "active": true,
+        "paused": false,
+        "index": 6
+      },
+      "agents": {
+        "enabled": true,
+        "userEnabled": true,
+        "reducedMotion": false,
+        "paused": false,
+        "rate": 24,
+        "presentation": true,
+        "step": 5,
+        "updates": 1486,
+        "clock": 58.097,
+        "drawCalls": 3,
+        "actors": [
+          {
+            "name": "MAYA",
+            "zone": "think",
+            "position": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "home": [
+              -3,
+              5.07,
+              1.55
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.022497117938069442,
+              0.014597804219772399,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NOA",
+            "zone": "create",
+            "position": [
+              3,
+              5.07,
+              2.65
+            ],
+            "home": [
+              3,
+              5.07,
+              2.65
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.018507136888161465,
+              -0.08286903617480018,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "NINA",
+            "zone": "grow",
+            "position": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "home": [
+              7.4,
+              0.79,
+              3.5
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              -0.00869205080560218,
+              -0.023178589536086758,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "LEO",
+            "zone": "build",
+            "position": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "home": [
+              -6.05,
+              0.79,
+              2.8
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.024990816433802632,
+              0.0804689780840484,
+              0
+            ],
+            "activity": 0
+          },
+          {
+            "name": "ARI",
+            "zone": "control",
+            "position": [
+              1.6,
+              0.79,
+              2.4
+            ],
+            "home": [
+              0.5,
+              0.79,
+              2.4
+            ],
+            "walking": false,
+            "footClearance": [
+              0.005,
+              0.005
+            ],
+            "head": [
+              0.020050599097072373,
+              -0.01878294653561865,
+              0
+            ],
+            "activity": 1
+          }
+        ]
+      }
+    }
+  ],
+  "diagnostics": {
+    "agents": {
+      "enabled": true,
+      "userEnabled": true,
+      "reducedMotion": false,
+      "paused": false,
+      "rate": 24,
+      "presentation": true,
+      "step": 5,
+      "updates": 1743,
+      "clock": 68.947,
+      "drawCalls": 3,
+      "actors": [
+        {
+          "name": "MAYA",
+          "zone": "think",
+          "position": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "home": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.01757724078186189,
+            -0.07719369489599384,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NOA",
+          "zone": "create",
+          "position": [
+            3,
+            5.07,
+            2.65
+          ],
+          "home": [
+            3,
+            5.07,
+            2.65
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.023050506987793935,
+            -0.03953161039912939,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NINA",
+          "zone": "grow",
+          "position": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "home": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.0003831281361906998,
+            0.07310034136250318,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "LEO",
+          "zone": "build",
+          "position": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "home": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.023336294555714992,
+            0.04710088313035532,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "ARI",
+          "zone": "control",
+          "position": [
+            1.6,
+            0.79,
+            2.4
+          ],
+          "home": [
+            0.5,
+            0.79,
+            2.4
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.04702416262474551,
+            -0.04762481919829644,
+            0
+          ],
+          "activity": 1
+        }
+      ]
+    },
+    "highlightedZone": null,
+    "flowActive": true,
+    "flowStep": 5,
+    "currentZone": "all",
+    "three": "180",
+    "quality": "alta",
+    "dpr": 1,
+    "viewport": [
+      1600,
+      900
+    ],
+    "drawCalls": 82,
+    "triangles": 111522,
+    "sampledFrames": 622,
+    "fps": 48.7,
+    "p95FrameMs": 34.1,
+    "meanSubmitMs": 2.24,
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+    "camera": [
+      28.000000000000004,
+      12.800000000000004,
+      38.00000000000001
+    ],
+    "target": [
+      0,
+      4.4,
+      0
+    ],
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "errors": [],
+  "video": "GAVEA-BUILD-2030-demo.webm"
+}

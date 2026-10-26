@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-26",
+  "url": "http://127.0.0.1:8086",
+  "checks": [
+    "Build de produção: cena WebGL real, abertura 16:9 e carregamento concluído",
+    "Cinco núcleos: perfil, responsabilidades, aplicação e aproximação de câmera",
+    "Hotspot espacial e retorno à visão geral",
+    "Órbita por arraste e zoom por scroll",
+    "Botões de zoom e reinicialização",
+    "Qualidade leve desativa reflexão e sombras, alta restaura",
+    "Comando textual: validação, parser em português e navegação real",
+    "Teclado 1–5, Esc, P, ⌘K; movimento reduzido sem voo de câmera e tour manual",
+    "Apresentação: abertura, 5 fases, linhas de conexão, pausa, avanço, retorno e encerramento",
+    "1440, 1024, 768, 390 e 375 px: sem overflow horizontal; navegação e painéis acessíveis",
+    "Medição de desempenho durante navegação real na GPU local",
+    "Perda real do contexto WebGL ativa referência e mantém a narrativa navegável",
+    "Contingência forçada sem iniciar WebGL, com identificação de referência visual",
+    "Zero requisições externas: bibliotecas, marcas e fonte servidas localmente",
+    "Zero exceções JS ou erros de console na execução normal"
+  ],
+  "errors": [],
+  "warnings": [],
+  "externalRequests": [],
+  "screenshots": [
+    "01-overview-1600x900.png",
+    "02-brand-1600x900.png",
+    "02-technology-1600x900.png",
+    "04-closing-1600x900.png",
+    "05-laptop-1440x900.png",
+    "05-mobile-focus-390x844.png",
+    "05-mobile-overview-390x844.png",
+    "06-fallback-1600x900.png"
+  ],
+  "performance": {
+    "agents": {
+      "enabled": true,
+      "userEnabled": true,
+      "reducedMotion": false,
+      "paused": false,
+      "rate": 24,
+      "presentation": false,
+      "step": 0,
+      "updates": 1755,
+      "clock": 35.897,
+      "drawCalls": 3,
+      "actors": [
+        {
+          "name": "MAYA",
+          "zone": "think",
+          "position": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "home": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.019446973375435255,
+            -0.0004174527630744181,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NOA",
+          "zone": "create",
+          "position": [
+            3,
+            5.07,
+            2.65
+          ],
+          "home": [
+            3,
+            5.07,
+            2.65
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.007323712767606688,
+            0.0848633673710618,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NINA",
+          "zone": "grow",
+          "position": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "home": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.02490996567609168,
+            0.009204743774464919,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "LEO",
+          "zone": "build",
+          "position": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "home": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.011257429773383391,
+            -0.08391024985959668,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "ARI",
+          "zone": "control",
+          "position": [
+            0.5008080827561812,
+            0.79,
+            2.4
+          ],
+          "home": [
+            0.5,
+            0.79,
+            2.4
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.01651268765844194,
+            -0.017893342956005757,
+            0
+          ],
+          "activity": 0
+        }
+      ]
+    },
+    "highlightedZone": null,
+    "flowActive": false,
+    "flowStep": 0,
+    "currentZone": "all",
+    "three": "180",
+    "quality": "alta",
+    "dpr": 1,
+    "viewport": [
+      1600,
+      900
+    ],
+    "drawCalls": 72,
+    "triangles": 108322,
+    "sampledFrames": 900,
+    "fps": 58.3,
+    "p95FrameMs": 17.7,
+    "meanSubmitMs": 1.89,
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+    "camera": [
+      28.000000000000004,
+      12.800000000000004,
+      38.00000000000001
+    ],
+    "target": [
+      0,
+      4.4,
+      0
+    ],
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "contextLossMessages": []
+}

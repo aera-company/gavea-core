@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-26",
+  "errors": [],
+  "diagnostics": {
+    "agents": {
+      "enabled": true,
+      "userEnabled": true,
+      "reducedMotion": false,
+      "paused": false,
+      "rate": 24,
+      "presentation": false,
+      "step": 0,
+      "updates": 336,
+      "clock": 9.15,
+      "drawCalls": 3,
+      "actors": [
+        {
+          "name": "MAYA",
+          "zone": "think",
+          "position": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "home": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.023207997136824084,
+            0.010322754476355403,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NOA",
+          "zone": "create",
+          "position": [
+            3,
+            5.07,
+            2.65
+          ],
+          "home": [
+            3,
+            5.07,
+            2.65
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.01727970692172646,
+            0.08479214189163055,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NINA",
+          "zone": "grow",
+          "position": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "home": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.01031850938776483,
+            -0.001542838604685915,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "LEO",
+          "zone": "build",
+          "position": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "home": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.02497715878739184,
+            -0.08495090054232726,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "ARI",
+          "zone": "control",
+          "position": [
+            0.5,
+            0.79,
+            2.4
+          ],
+          "home": [
+            0.5,
+            0.79,
+            2.4
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.021687106963073712,
+            -0.05826627679814347,
+            0
+          ],
+          "activity": 1
+        }
+      ]
+    },
+    "highlightedZone": "control",
+    "flowActive": false,
+    "flowStep": 0,
+    "currentZone": "control",
+    "three": "180",
+    "quality": "alta",
+    "dpr": 1.25,
+    "viewport": [
+      1440,
+      900
+    ],
+    "drawCalls": 72,
+    "triangles": 108322,
+    "sampledFrames": 301,
+    "fps": 41.1,
+    "p95FrameMs": 33.4,
+    "meanSubmitMs": 2,
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+    "camera": [
+      12.000000000000005,
+      6.8000000000000025,
+      28
+    ],
+    "target": [
+      0.5,
+      2.5,
+      2.3
+    ],
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  }
+}

@@ -1,0 +1,24 @@
+GAVEA BUILD 2030 — 25/10/2026
+Gate 00: auditoria da base e referências. Preservação de originais com hashes.
+Gate 01: adaptação incremental da cena Three.js existente, sem migração de framework.
+Gate 02: nova interface, cinco núcleos, agentes propostos e percurso de sete etapas.
+Gate 03: enquadramento, luz, vegetação, reflexão geométrica e interação refinados por capturas reais.
+Gate 04: produção compilada; testes e capturas registrados em TEST_RESULTS.json / COMPATIBILITY_RESULTS.json.
+Falha encontrada e corrigida: o estilo genérico de pressão mudava o transform de posicionamento dos hotspots durante o clique. Feedback passou a usar translate, preservando o transform espacial.
+Ajuste de teste: comparação de câmera com tolerância numérica para deriva submicrométrica de OrbitControls; sem voo ao usar reduced-motion.
+Regressão visual corrigida: a abertura em notebook compacto podia alcançar a navegação inferior. A tipografia e o espaçamento agora usam também a altura do viewport; teste geométrico de não sobreposição aprovado em 1600, 1440, 1024 e 390 px.
+Recuperação após falha testada com navegação completa; trocar só a âncora não provoca recarregamento do navegador.
+
+26/10/2026 — V0.1.1: usuário decidiu seguir sem a vista real do escritório.
+Refinamento incremental de iluminação, contornos dos ambientes, sombras de contato, tapetes, madeira, folhagem e câmeras. Sem novas dependências externas.
+Regressão funcional: 15 grupos aprovados, zero erros de console e zero requisições externas. 59,1 FPS em qualidade alta na GPU Apple M1; 91.422 triângulos e 70 draw calls.
+Retina: a primeira checagem acionou modo leve. O limite de DPR foi reduzido de 1,5 para 1,25 e o teste foi repetido sem codificação de vídeo concorrente. Resultado final: qualidade alta preservada, 39,7 FPS amostrados, zero erros.
+Ajuste de DPR validado no teste Retina. O percurso gravado com DPR 1 não é afetado por essa alteração de limite.
+
+26/10/2026 — V0.1.2: cinco figuras articuladas com geometria instanciada. Movimento de cabeça/postura, gestos e percursos curtos por fase; pausas por clique e teclado; redução de movimento.
+Oito grupos de comportamento aprovados no Chromium e oito no WebKit. Regressão geral: 15 grupos aprovados. Percurso completo confirma deslocamento de MAYA, NOA, NINA, LEO e ARI.
+Uma captura do Chromium excedeu o limite durante a primeira execução da regressão; a repetição, sem alterar o comportamento da aplicação, concluiu todas as verificações e capturas. Não houve erros JS/console.
+Desempenho da navegação no Chromium / Apple M1, 1600x900 DPR 1: 58,3 FPS amostrados, 72 draw calls e 108.322 triângulos. Com presenças ativas, cenas paradas passam a ter renderização limitada a até 24 FPS; com pausa/redução de movimento voltam ao desenho sob demanda.
+Retina com figuras animadas: qualidade alta, DPR 1.25, 41.1 FPS amostrados; zero erros. Controle Agentes e instruções de exploração conferidos em celular, sem sobreposição.
+
+26/10/2026 — V0.1.3: painel de pedido ao vivo e ponte HTTP local. Provedor final Claude, por escolha explícita do usuário. Sem dependências novas. Dez testes de contrato/HTTP aprovados com transporte Anthropic simulado. Fluxo de UI conferido com fixture identificada, painel final Claude e pausa do tour conferidos no navegador integrado. Desktop e 390x844 sem overflow horizontal. Nenhuma chamada paga: conexão real depende da chave do usuário. Credenciais excluídas do build e do empacotamento.

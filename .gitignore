@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+.env*
+!.env.example
+__pycache__/
+/*.zip
+/backups/
+/docs/*.webm
+/docs/*.mp4
+/docs/recording*/
+/docs/agents-recording/
+*.pem
+*.key

@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-26",
+  "engine": "webkit",
+  "checks": [
+    "Cinco figuras: cabeça e postura se movem; posições de repouso permanecem fixas",
+    "Núcleo selecionado ativa gesto de trabalho do agente correspondente",
+    "Botão Agentes pausa e retoma movimentos sem mover a câmera",
+    "Abertura move ARI; Pausar apresentação congela os personagens e Continuar retoma",
+    "Deslocamento de MAYA tem início e fim e preserva o pavimento de todos os agentes",
+    "Sair da apresentação devolve os agentes aos pontos de origem",
+    "Movimento reduzido mantém figuras imóveis e navegação funcional, inclusive no percurso",
+    "Preferência pode mudar durante a sessão; zero erros JS e de console"
+  ],
+  "errors": [],
+  "performance": {
+    "agents": {
+      "enabled": true,
+      "userEnabled": true,
+      "reducedMotion": false,
+      "paused": false,
+      "rate": 24,
+      "presentation": false,
+      "step": 0,
+      "updates": 513,
+      "clock": 12.927,
+      "drawCalls": 3,
+      "actors": [
+        {
+          "name": "MAYA",
+          "zone": "think",
+          "position": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "home": [
+            -3,
+            5.07,
+            1.55
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.020071402437352587,
+            0.031202593331992417,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NOA",
+          "zone": "create",
+          "position": [
+            3,
+            5.07,
+            2.65
+          ],
+          "home": [
+            3,
+            5.07,
+            2.65
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.02131485156679855,
+            -0.07734428903202223,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "NINA",
+          "zone": "grow",
+          "position": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "home": [
+            7.4,
+            0.79,
+            3.5
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.0041719710438660506,
+            -0.03921131162090136,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "LEO",
+          "zone": "build",
+          "position": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "home": [
+            -6.05,
+            0.79,
+            2.8
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            -0.02442685860945043,
+            0.07328410126441834,
+            0
+          ],
+          "activity": 0
+        },
+        {
+          "name": "ARI",
+          "zone": "control",
+          "position": [
+            0.5,
+            0.79,
+            2.4
+          ],
+          "home": [
+            0.5,
+            0.79,
+            2.4
+          ],
+          "walking": false,
+          "footClearance": [
+            0.005,
+            0.005
+          ],
+          "head": [
+            0.014048806431144548,
+            0.04679961201723491,
+            0
+          ],
+          "activity": 0
+        }
+      ]
+    },
+    "highlightedZone": null,
+    "flowActive": false,
+    "flowStep": 0,
+    "currentZone": "all",
+    "three": "180",
+    "quality": "alta",
+    "dpr": 1,
+    "viewport": [
+      1600,
+      900
+    ],
+    "drawCalls": 72,
+    "triangles": 108322,
+    "sampledFrames": 428,
+    "fps": 58.8,
+    "p95FrameMs": 27,
+    "meanSubmitMs": 1.63,
+    "gpu": "Apple GPU",
+    "camera": [
+      28,
+      12.800000000000002,
+      38
+    ],
+    "target": [
+      0,
+      4.4,
+      0
+    ],
+    "webgl": "WebGL 2.0"
+  }
+}
