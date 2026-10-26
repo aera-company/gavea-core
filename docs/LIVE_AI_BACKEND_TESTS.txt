@@ -1,33 +1,33 @@
-test_connect_and_conversation_use_real_transport_contract (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/connect HTTP/1.1" 200 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/chat HTTP/1.1" 200 -
+test_connect_and_conversation_use_real_transport_contract (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/connect HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/chat HTTP/1.1" 200 -
 ok
-test_cross_origin_and_rebinding_are_rejected (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/connect HTTP/1.1" 403 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "GET /api/status HTTP/1.1" 403 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/disconnect HTTP/1.1" 403 -
+test_cross_origin_and_rebinding_are_rejected (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/connect HTTP/1.1" 403 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "GET /api/status HTTP/1.1" 403 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/disconnect HTTP/1.1" 403 -
 ok
-test_disconnect_and_concurrent_request (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/disconnect HTTP/1.1" 409 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/disconnect HTTP/1.1" 200 -
+test_disconnect_and_concurrent_request (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/disconnect HTTP/1.1" 409 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/disconnect HTTP/1.1" 200 -
 ok
-test_failed_auth_is_sanitized_and_never_connected (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/connect HTTP/1.1" 401 -
+test_failed_auth_is_sanitized_and_never_connected (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/connect HTTP/1.1" 401 -
 ok
-test_missing_key_does_not_fake_a_response (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/chat HTTP/1.1" 503 -
+test_missing_key_does_not_fake_a_response (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/chat HTTP/1.1" 503 -
 ok
 test_rate_limit_timeout_and_incomplete_never_complete (__main__.LiveAI) ... ok
 test_refusal_and_malformed_provider_output (__main__.LiveAI) ... ok
-test_static_build_cannot_serve_environment_file (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] code 404, message File not found
-127.0.0.1 - - [26/Oct/2026 12:00:58] "GET /.env.local HTTP/1.1" 404 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] code 404, message File not found
-127.0.0.1 - - [26/Oct/2026 12:00:58] "GET /scripts/serve_demo.py HTTP/1.1" 404 -
+test_static_build_cannot_serve_environment_file (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] code 404, message File not found
+127.0.0.1 - - [26/Oct/2026 12:54:12] "GET /.env.local HTTP/1.1" 404 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] code 404, message File not found
+127.0.0.1 - - [26/Oct/2026 12:54:12] "GET /scripts/serve_demo.py HTTP/1.1" 404 -
 ok
-test_status_never_exposes_key_and_requires_verification (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "GET /api/status HTTP/1.1" 200 -
+test_status_never_exposes_key_and_requires_verification (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "GET /api/status HTTP/1.1" 200 -
 ok
-test_validation_blocks_system_role_and_oversized_input (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/chat HTTP/1.1" 400 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/chat HTTP/1.1" 400 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/chat HTTP/1.1" 400 -
-127.0.0.1 - - [26/Oct/2026 12:00:58] "POST /api/connect HTTP/1.1" 400 -
+test_validation_blocks_system_role_and_oversized_input (__main__.LiveAI) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/chat HTTP/1.1" 400 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/chat HTTP/1.1" 400 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/chat HTTP/1.1" 400 -
+127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/connect HTTP/1.1" 400 -
 ok
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.564s
+Ran 10 tests in 0.550s
 
 OK

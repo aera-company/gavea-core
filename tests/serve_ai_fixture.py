@@ -2,18 +2,20 @@
 import importlib.util
 import pathlib
 import time
+import sys
 
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]/'scripts'))
 spec = importlib.util.spec_from_file_location('gavea_fixture', pathlib.Path(__file__).resolve().parents[1] / 'scripts/serve_demo.py')
 app = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(app)
 
 
 class Fixture(app.Bridge):
-    def request(self, key, messages, probe=False):
+    def request(self, key, messages, probe=False, instructions=None, max_tokens=None):
         if key != 'sk-test-placeholder-not-a-real-api-key':
             raise app.APIError(401, 'Chave de teste inválida.', 'auth_failed')
-        time.sleep(.5 if probe else 2)
-        if messages[-1]['content'] == 'Teste de falha':
+        time.sleep(.5 if probe else 7)
+        if messages[-1]['content'].startswith('Teste de falha'):
             raise app.APIError(429, 'Falha controlada: limite de uso. Tente novamente.', 'rate_limit')
         text = ('RESPOSTA DE TESTE CONTROLADO — SEM IA REAL\n\n'
                 'Recebi o ajuste com histórico.' if len(messages) > 1 else

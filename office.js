@@ -389,14 +389,21 @@ export async function createOffice({selectZone,onFailure,onQuality}) {
   };
   let transition=null,currentZone='all',dirty=true,renderUntil=0;
   const team=createAgentTeam({scene,contactMaterial,onInvalidate:()=>{dirty=true;}});
+  let workflowStage=null;
+  function setWorkflowStage(value){
+    workflowStage=value;team.setWorkflow(value);highlight(value?.zone||null);
+    if(isMobile()&&currentZone==='all')camera.setViewOffset(width,height,0,height*(value ? .16 : -.11),width,height);
+    dirty=true;
+  }
   const isMobile=()=>innerWidth<=900;
   function adjustedView(zone) {
     const v=views[zone],target=new THREE.Vector3(...v.target),position=new THREE.Vector3(...v.position);
     if(isMobile()) {
       const factor=zone==='all'?(innerWidth<550?1.70:1.35):(innerWidth<550?1.9:1.35);
       position.sub(target).multiplyScalar(factor).add(target);
-      camera.setViewOffset(width,height,0,-height*(zone==='all'?.11:-.20),width,height);
+      camera.setViewOffset(width,height,0,height*(zone==='all'?(workflowStage ? .16 : -.11):.20),width,height);
     } else {
+      if(zone==='all'&&width/height<1.3)position.sub(target).multiplyScalar(1.28).add(target);
       // Leave a quiet editorial column; reserve the right side for architecture.
       const shift=innerWidth>1100?.13:.15;
       camera.setViewOffset(width,height,-width*shift,height*.025,width,height);
@@ -415,6 +422,9 @@ export async function createOffice({selectZone,onFailure,onQuality}) {
   controls.addEventListener('change',()=>{dirty=true;});
   const labels=[];
   const labelLayer=document.querySelector('#scene-labels');
+  const jobSVG=document.createElementNS('http://www.w3.org/2000/svg','svg'),jobPath=document.createElementNS('http://www.w3.org/2000/svg','path');jobSVG.classList.add('live-handoff-path');jobSVG.setAttribute('aria-hidden','true');jobSVG.append(jobPath);labelLayer.append(jobSVG);
+  const jobLabels=[0,1].map(()=>{const div=document.createElement('div');div.className='live-agent-label';labelLayer.append(div);return div;});
+  const jobDot=document.createElement('span');jobDot.className='live-handoff-dot';jobDot.setAttribute('aria-hidden','true');labelLayer.append(jobDot);
   const labelData=[['think','brand','01','Brand',[-7.8,7.55,6.1]],['create','marketing','02','Communication',[7.8,7.55,6.1]],['grow','growth','03','Growth',[7.8,3.05,6.1]],['build','technology','04','AI & Systems',[-7.8,3.05,6.1]],['control','direction','05','Direction',[.6,3.15,6.1]]];
   for(const [zone,id,num,title,position] of labelData) {
     const button=document.createElement('button');button.className='hotspot';button.dataset.zone=zone;button.dataset.id=id;button.dataset.number=num;button.textContent=title;
@@ -428,9 +438,17 @@ export async function createOffice({selectZone,onFailure,onQuality}) {
       const x=(projected.x*.5+.5)*width,y=(-projected.y*.5+.5)*height;
       const leftLimit=isMobile()?40:Math.min(425,width*.29),rightLimit=width-60;
       const behind=camera.position.z<0;
-      button.hidden=behind||projected.z>1||x<leftLimit||x>rightLimit||y<(isMobile()?410:180)||y>height-(isMobile()?230:225)||(currentZone!=='all'&&currentZone!==zone);
+      button.hidden=!!workflowStage||behind||projected.z>1||x<leftLimit||x>rightLimit||y<(isMobile()?410:180)||y>height-(isMobile()?230:225)||(currentZone!=='all'&&currentZone!==zone);
       button.style.left=`${x}px`;button.style.top=`${y}px`;
       button.classList.toggle('selected',currentZone===zone);
+    }
+    jobSVG.style.display=workflowStage?'block':'none';jobLabels.forEach(el=>el.hidden=!workflowStage);jobDot.hidden=true;
+    if(workflowStage){
+      const anchors=team.anchors(),keys=[workflowStage.zone,workflowStage.partnerZone],names=[workflowStage.agent,workflowStage.partner];
+      const points=keys.map(key=>{const v=new THREE.Vector3(...anchors[key]).project(camera);return {x:(v.x*.5+.5)*width,y:(-v.y*.5+.5)*height};});
+      points.forEach((p,i)=>{const text=`${names[i]} · ${i===0?'EM EXECUÇÃO':'REPASSE'}`;if(jobLabels[i].textContent!==text)jobLabels[i].textContent=text;jobLabels[i].style.transform=`translate3d(${Math.max(65,Math.min(width-65,p.x))}px,${p.y-20}px,0) translate(-50%,-100%)`;});
+      const [a,b]=points,m={x:(a.x+b.x)/2,y:Math.min(a.y,b.y)-35};jobPath.setAttribute('d',`M ${a.x} ${a.y} Q ${m.x} ${m.y} ${b.x} ${b.y}`);
+      if(team.state().enabled){const t=(performance.now()%2800)/2800,x=(1-t)*(1-t)*a.x+2*(1-t)*t*m.x+t*t*b.x,y=(1-t)*(1-t)*a.y+2*(1-t)*t*m.y+t*t*b.y;jobDot.hidden=false;jobDot.style.transform=`translate3d(${x}px,${y}px,0)`;}
     }
   }
   let last=performance.now(),samples=[],slowSamples=[],benchmarkUntil=0;
@@ -491,6 +509,7 @@ export async function createOffice({selectZone,onFailure,onQuality}) {
     setAgentPresentationPaused(value){team.setPresentationPaused(value);},
     toggleAgentMotion(){return team.setEnabled(!team.state().userEnabled);},
     agentMotionState(){return team.state();},
+    setWorkflowStage,
     diagnostics(){
       const ordered=[...samples].sort((a,b)=>a-b),mean=samples.reduce((a,b)=>a+b,0)/(samples.length||1);
       return {agents:team.diagnostics(),highlightedZone,flowActive,flowStep,currentZone,three:THREE.REVISION,quality:lowQuality?'leve':'alta',dpr:renderer.getPixelRatio(),viewport:[width,height],drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,sampledFrames:samples.length,fps:mean?Math.round(1000/mean*10)/10:null,p95FrameMs:ordered.length?Math.round(ordered[Math.floor(ordered.length*.95)]*10)/10:null,meanSubmitMs:slowSamples.length?+(slowSamples.reduce((a,b)=>a+b,0)/slowSamples.length).toFixed(2):null,gpu:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),camera:camera.position.toArray(),target:controls.target.toArray(),webgl:gl.getParameter(gl.VERSION)};

@@ -1,0 +1,14 @@
+test_streamed_roles_and_real_handoffs (__main__.Workflow) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/workflow HTTP/1.1" 200 -
+ok
+test_failure_stops_paid_stages_and_never_delivers (__main__.Workflow) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/workflow HTTP/1.1" 200 -
+ok
+test_refusal_stops_before_next_role (__main__.Workflow) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/workflow HTTP/1.1" 200 -
+ok
+test_missing_key_never_starts_workflow (__main__.Workflow) ... 127.0.0.1 - - [26/Oct/2026 12:54:12] "POST /api/workflow HTTP/1.1" 503 -
+ok
+test_routing_uses_request_not_embedded_context (__main__.Workflow) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.516s
+
+OK

@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+(async()=>{const {readWorkflow,compatibleWorkflow}=await import('../workflow.js');
+ const input=[{type:'accepted',plan:[]},{type:'handoff',agent:'MAYA',text:'Direção e comunicação — ação.'},{type:'result',text:'Entrega útil.'}];
+ const bytes=new TextEncoder().encode(input.map(e=>JSON.stringify(e)).join('\n'));
+ const stream=new ReadableStream({start(controller){for(let i=0;i<bytes.length;i+=3)controller.enqueue(bytes.slice(i,i+3));controller.close();}});
+ const events=[];const result=await readWorkflow(new Response(stream),e=>events.push(e));assert.equal(result.text,'Entrega útil.');assert.deepEqual(events,input);
+ await assert.rejects(()=>readWorkflow(new Response(JSON.stringify({type:'stage',index:0})+'\n'),()=>{}),/interrompida/);
+ await assert.rejects(()=>readWorkflow(new Response(JSON.stringify({type:'error',error:'Limite controlado',code:'rate_limit'})+'\n'),()=>{}),e=>e.code==='rate_limit');
+ const calls=[],legacyEvents=[];const legacy=await compatibleWorkflow([{role:'user',content:'Apresentação MERUS'}],'Contexto de teste',async body=>{calls.push(body);return {text:'Repasse '+calls.length};},e=>legacyEvents.push(e));assert.equal(calls.length,3);assert.equal(legacy.text,'Repasse 3');assert.deepEqual(legacyEvents.filter(e=>e.type==='stage').map(e=>e.agent),['MAYA','NOA','ARI']);assert(calls[2].messages.some(m=>m.content.includes('Repasse 2')));assert.equal(calls[0].context,'Contexto de teste');
+ let failCalls=0;await assert.rejects(()=>compatibleWorkflow([{role:'user',content:'Teste'}],'',async()=>{failCalls++;if(failCalls===2)throw new Error('Falha controlada');return {text:'Primeiro'};},()=>{}),/Falha controlada/);assert.equal(failCalls,2);
+ console.log('PASS: NDJSON com chunks UTF-8 divididos, resultado final, EOF prematuro e erro do serviço.');
+ console.log('PASS: Servidor anterior preserva credencial com três chamadas, repasses reais e interrupção em erro.');
+})().catch(e=>{console.error(e);process.exitCode=1;});

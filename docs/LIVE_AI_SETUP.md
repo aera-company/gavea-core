@@ -1,9 +1,9 @@
-# Pedido ao vivo com Claude — V0.1.3
+# Pedido ao vivo com Claude — V0.1.4
 
 ## Ativar neste computador
 
 1. Manter `python3 scripts/serve_demo.py` ou `INICIAR_GAVEA.command` em execução.
-2. Abrir `http://127.0.0.1:8086/?v=0.1.3&live=1#overview`.
+2. Abrir `http://127.0.0.1:8086/?v=0.1.4&live=1#overview`.
 3. Obter uma chave vinculada a um workspace em https://platform.claude.com/settings/keys.
 4. Inserir a chave no campo protegido do próprio painel e clicar **Conectar e testar**.
 5. Aguardar **Conexão verificada**. O teste é uma chamada pequena, cobrada pela Anthropic.
@@ -29,7 +29,7 @@ Dez testes automatizados HTTP/contrato passaram, com transporte Anthropic simula
 
 Interface verificada com uma fixture local em 8097, claramente identificada como sem IA real. A fixture existe somente em `tests/serve_ai_fixture.py`; o servidor normal nunca gera respostas de teste. A verificação inclui envio, espera, ajuste mantendo histórico, falha recuperável, limpeza e proteção contra HTML na resposta. O layout real sem credencial foi verificado em desktop e 390×844.
 
-**Pendente: chave real e resposta real da Anthropic. Nenhuma chamada paga foi feita durante a implementação.** Depois da conexão, testar uma pergunta neutra antes do material MERUS e confirmar acesso, saldo e latência no computador da reunião.
+A V0.1.3 foi inicialmente verificada sem chave. Na V0.1.4, a conexão ativada pelo usuário foi preservada e um pedido neutro real concluiu MAYA → NOA → ARI. A verificação consumiu três chamadas na conta já conectada. Em outro computador ou após encerrar o processo, conectar a chave novamente.
 
 Referências oficiais consultadas em 26/10/2026:
 
@@ -38,3 +38,7 @@ Referências oficiais consultadas em 26/10/2026:
 - https://platform.claude.com/docs/en/models/sonnet-5-5/overview
 - https://platform.claude.com/docs/en/models/sonnet-5-5/whats-new-sonnet-5-5
 - https://platform.claude.com/docs/en/api/migration-2026-10-21
+
+## Atualização V0.1.4
+
+Pedidos agora usam três chamadas sequenciais com papéis distintos e repasses reais. A operação fica visível no escritório. O servidor oferece `/api/workflow` como NDJSON; um caminho compatível usa três chamadas a `/api/chat` quando o servidor V0.1.3 já está conectado. Nesse caminho, até quatro trocas anteriores são mantidas, reservando um par de mensagens para o papel atual. A chave existente continua apenas no servidor e não é transferida para o navegador. Consulte `WORKFLOW_V0.1.4.md`.

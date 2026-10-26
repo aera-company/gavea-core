@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-26",
+  "version": "0.1.4",
+  "provider": "Claude / Anthropic",
+  "model": "claude-sonnet-5-5",
+  "live_verified": true,
+  "live_test": {
+    "request": "Teste neutro sobre organização de briefing, sem dados técnicos MERUS ou material privado.",
+    "roles": [
+      "MAYA",
+      "NOA",
+      "ARI"
+    ],
+    "provider_calls": 3,
+    "handoffs_received": 2,
+    "final_received": true,
+    "connection": "Preservada no servidor V0.1.3; chave não lida nem transferida.",
+    "console_errors_or_warnings": []
+  },
+  "automated": {
+    "http_contract_tests": 10,
+    "workflow_tests": 5,
+    "stream_parser": "UTF-8 em chunks, EOF e evento de erro aprovados",
+    "compatibility": "Três chamadas, repasses e interrupção em falha aprovados",
+    "actors": "Percursos no pavimento, gestos, pausa, redução de movimento e retorno aprovados"
+  },
+  "browser": {
+    "method": "CUA / navegador integrado",
+    "desktop": "Operação real acompanhada até a entrega.",
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "horizontal_overflow": false,
+      "initially_collapsed": true,
+      "labels": [
+        "LEO · EM EXECUÇÃO",
+        "NINA · REPASSE"
+      ],
+      "pause_hides_message_dot": true,
+      "fixture_failure_states": [
+        "error",
+        "waiting",
+        "waiting"
+      ],
+      "failed_request_preserved": true
+    },
+    "fixture": "Dados de teste identificados; sem chamadas reais em 8097. Instância de teste encerrada.",
+    "returned_to": "8086, Claude conectado, versão 0.1.4 pronta para novo pedido."
+  },
+  "screenshots": {
+    "15-live-workflow-running.png": "Etapa real ARI após repasse NOA; anterior ao ajuste final dos marcadores.",
+    "16-live-workflow-complete.png": "Entrega neutra real concluída.",
+    "17-workflow-mobile-test.png": "Layout final, marcadores e linha; fixture de teste."
+  },
+  "performance": "Benchmark completo não repetido; resultados antigos são históricos."
+}

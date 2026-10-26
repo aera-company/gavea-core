@@ -5,8 +5,8 @@
 <meta name="theme-color" content="#0c141b"><meta name="description" content="GAVEA BUILD 2030 — uma visão AERA para integrar marketing, tecnologia e crescimento. Experiência arquitetônica 3D e simulação conceitual.">
 <title>GAVEA BUILD 2030 — A vision by AERA</title>
 <link rel="icon" type="image/svg+xml" href="./assets/aera-CPAdZ9MM.svg">
-  <script type="module" crossorigin src="./assets/index-BMxPzoQX.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-cIJ5g5JB.css">
+  <script type="module" crossorigin src="./assets/index-LGTcE7Xp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CW8CCXHa.css">
 </head>
 <body>
 <a class="skip-link" href="#department-nav">Ir para os núcleos</a>
@@ -40,6 +40,12 @@
  <section id="tour-caption" class="tour-caption" hidden aria-live="polite"><p class="eyebrow" id="tour-phase"></p><h2 id="tour-message"></h2><p id="tour-output"></p></section>
  <section id="closing" class="closing" hidden><p class="eyebrow">A PRÓXIMA FASE SE CONSTRÓI EM CONJUNTO.</p><h2>ONE GAVEA.<br><span>ONE DIRECTION.</span></h2><p class="closing-pillars">BUILD <span>·</span> SCALE <span>·</span> LEAD</p><p class="closing-copy">Direção e execução integradas.<br>Ao lado do time e dos parceiros atuais.</p><button id="restart" class="text-button">Reiniciar experiência <span>↗</span></button></section>
  <div id="tour-controls" class="tour-controls" hidden><span id="tour-counter">01 / 07</span><button id="tour-prev" class="icon-button" aria-label="Etapa anterior">←</button><button id="tour-pause" class="quiet-button">Pausar</button><button id="tour-next" class="icon-button" aria-label="Próxima etapa">→</button><button id="tour-stop" class="quiet-button">Sair <span>×</span></button><span class="tour-progress"><span id="tour-progress-fill"></span></span></div>
+ <aside id="work-panel" class="work-panel" aria-label="Operação do pedido ao vivo" hidden data-state="idle">
+  <div class="work-heading"><p class="eyebrow">DO PEDIDO À ENTREGA</p><button id="work-toggle" aria-expanded="true" aria-controls="work-detail">Recolher</button></div>
+  <h2 id="work-title" role="status">Pedido recebido.</h2><ol id="work-stages" aria-label="Etapas da operação"></ol>
+  <div id="work-detail"><p id="work-summary" role="status"></p><div id="work-log" class="work-log" aria-label="Repasses gerados pelo Claude"></div><p class="work-truth">Papéis executados pelo Claude. Os movimentos representam as etapas.</p></div>
+  <div class="work-actions"><button id="work-open">Abrir conversa ↗</button><button id="work-dismiss" hidden>Fechar operação</button></div>
+ </aside>
  <div id="explore-hint" class="explore-hint" hidden><span>EXPLORAÇÃO LIVRE</span> Selecione um núcleo no edifício ou na navegação.</div>
  <div class="scene-caption"><span id="scene-location">O pavilhão de uma nova operação.</span><span id="scene-subtitle">Cinco capacidades. Um sistema integrado.</span></div>
  <div id="fallback-notice" class="fallback-notice" hidden role="status"><strong>Modo de referência visual</strong><span id="fallback-reason"></span><a href="?">Tentar carregar o 3D ↗</a></div>
@@ -61,7 +67,7 @@
    <details class="ai-reference"><summary>Contexto do projeto <span>opcional</span></summary><label for="ai-context">Cole informações aprovadas para orientar as respostas</label><textarea id="ai-context" rows="4" maxlength="12000" placeholder="Informações do MERUS, público, objetivo e restrições. Até 12.000 caracteres."></textarea><p>O contexto e a conversa são enviados ao Claude a cada pedido. Ainda não há catálogo do MERUS carregado.</p></details>
    <section id="ai-conversation" aria-label="Conversa com a IA" aria-busy="false"><div id="ai-empty"><span class="eyebrow">DO BRIEFING À PRIMEIRA ENTREGA</span><h3>Qual desafio vamos trabalhar?</h3><p>Faça um pedido e refine o resultado durante a conversa.</p><button id="ai-example" class="ai-example">Começar com um briefing do MERUS <span>↗</span></button></div><div id="ai-messages"></div></section>
   </div>
-  <div class="ai-composer"><p id="ai-notice" role="status" aria-live="polite">Conecte o Claude para começar.</p><form id="ai-form"><label for="ai-prompt">Seu pedido</label><textarea id="ai-prompt" rows="3" maxlength="4000" required placeholder="Ex.: prepare uma abordagem comercial do MERUS…" disabled></textarea><div class="ai-actions"><button id="ai-clear" type="button" class="text-button">Nova conversa</button><button id="ai-copy" type="button" class="text-button" disabled>Copiar resposta</button><button id="ai-send" type="submit" class="quiet-button" disabled>Enviar pedido ↗</button></div></form><p class="ai-footnote">Uma IA de apoio · Revise a entrega antes de usar · Histórico apenas nesta aba</p></div>
+  <div class="ai-composer"><p id="ai-notice" role="status" aria-live="polite">Conecte o Claude para começar.</p><form id="ai-form"><label for="ai-prompt">Seu pedido</label><textarea id="ai-prompt" rows="3" maxlength="4000" required placeholder="Ex.: prepare uma abordagem comercial do MERUS…" disabled></textarea><div class="ai-actions"><button id="ai-clear" type="button" class="text-button">Nova conversa</button><button id="ai-copy" type="button" class="text-button" disabled>Copiar resposta</button><button id="ai-send" type="submit" class="quiet-button" disabled>Enviar pedido ↗</button></div></form><p class="ai-footnote">3 etapas do Claude por pedido · Revise a entrega · Histórico apenas nesta aba</p></div>
  </div>
 </dialog>
 </body></html>

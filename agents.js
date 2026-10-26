@@ -57,6 +57,7 @@ export function createAgentTeam({scene, contactMaterial, onInvalidate=()=>{}}) {
   }
   const order=['control','think','create','grow','build','control'];
   let selected=null,presentation=false,step=0,presentationPaused=false,userEnabled=true;
+  let workflow=null;
   let time=0,last=performance.now(),invalid=true,updates=0;
   const frameInterval=1000/24;
   // The existing UI motion token: cubic-bezier(.77,0,.175,1).
@@ -78,7 +79,7 @@ export function createAgentTeam({scene, contactMaterial, onInvalidate=()=>{}}) {
     if(distance<.008){actor.route=null;return;}
     actor.route={from:actor.rig.position.clone(),to:target.clone(),start:time,duration:Math.max(1.6,Math.min(3.4,distance/.48))};
   }
-  function syncRoutes(){if(!enabled())return;for(const actor of actors){const target=presentation&&actor.zone===order[step]?actor.work:actor.home;routeTo(actor,target);}}
+  function syncRoutes(){if(!enabled())return;for(const actor of actors){const engaged=workflow?(actor.zone===workflow.zone||actor.zone===workflow.partnerZone):presentation&&actor.zone===order[step];routeTo(actor,engaged?actor.work:actor.home);}}
   function invalidate(){invalid=true;onInvalidate();}
   function mediaChanged(){last=performance.now();if(media.matches)settle();else syncRoutes();invalidate();}
   media.addEventListener('change',mediaChanged);
@@ -95,9 +96,10 @@ export function createAgentTeam({scene, contactMaterial, onInvalidate=()=>{}}) {
         speedEnvelope=Math.sin(Math.PI*t);actor.stride+=dt*7.5;gait=Math.sin(actor.stride)*speedEnvelope;
         yawToward(actor,route.to.x-route.from.x,route.to.z-route.from.z,dt);
         if(t===1){actor.route=null;actor.rig.position.copy(route.to);}
-      }else yawToward(actor,actor.look[0]-actor.rig.position.x,actor.look[1]-actor.rig.position.z,dt);
+      }else{const peer=workflow&&actors.find(a=>a.zone===(actor.zone===workflow.zone?workflow.partnerZone:actor.zone===workflow.partnerZone?workflow.zone:null));yawToward(actor,(peer?.rig.position.x??actor.look[0])-actor.rig.position.x,(peer?.rig.position.z??actor.look[1])-actor.rig.position.z,dt);}
       actor.walking=!!actor.route;
-      const active=actor.zone===(presentation?order[step]:selected)&&!actor.walking;
+      const inConversation=workflow&&(actor.zone===workflow.zone||actor.zone===workflow.partnerZone);
+      const active=(workflow?inConversation:actor.zone===(presentation?order[step]:selected))&&!actor.walking;
       actor.activityWeight=THREE.MathUtils.damp(actor.activityWeight,active?1:0,5,dt);
       const work=actor.activityWeight,phase=time+actor.index*2.17;
       const breathe=Math.sin(phase*1.2);
@@ -108,7 +110,7 @@ export function createAgentTeam({scene, contactMaterial, onInvalidate=()=>{}}) {
       actor.head.rotation.y=(.085*Math.sin(phase*.7)+work*.055*Math.sin(phase*1.3))*(1-speedEnvelope);
       actor.head.rotation.x=.025*Math.sin(phase*.9)+work*.03;
       for(const arm of actor.arms){
-        const side=arm.side,typing=actor.activity==='keyboard',conversing=actor.activity==='conversation'||actor.activity==='direction';
+        const side=arm.side,typing=actor.activity==='keyboard'&&!inConversation,conversing=inConversation||actor.activity==='conversation'||actor.activity==='direction';
         const gesture=conversing?(side===1?.45:.1):.18;
         arm.shoulder.rotation.x=-gait*side*.24-work*gesture;
         arm.shoulder.rotation.z=side*(.07+work*.055);
@@ -123,8 +125,10 @@ export function createAgentTeam({scene, contactMaterial, onInvalidate=()=>{}}) {
     select(zone){selected=zone;invalidate();},
     setPresentation(active,nextStep=0){const changed=presentation!==active||step!==nextStep;presentation=active;step=Math.max(0,Math.min(5,nextStep));if(!active)presentationPaused=false;if(changed)syncRoutes();invalidate();},
     setPresentationPaused(value){presentationPaused=!!value;last=performance.now();invalidate();},
+    setWorkflow(value){workflow=value;presentationPaused=false;syncRoutes();invalidate();},
+    anchors(){return Object.fromEntries(actors.map(a=>[a.zone,[a.rig.position.x,a.rig.position.y+2.05,a.rig.position.z]]));},
     setEnabled(value){userEnabled=!!value;last=performance.now();if(enabled())syncRoutes();invalidate();return this.state();},
     state(){return {enabled:enabled(),userEnabled,reducedMotion:media.matches,paused:presentationPaused,rate:24};},
-    diagnostics(){return {...this.state(),presentation,step,updates,clock:+time.toFixed(3),drawCalls:3,actors:actors.map(a=>({name:a.name,zone:a.zone,position:a.rig.position.toArray(),home:a.home.toArray(),walking:a.walking,footClearance:a.legs.map(leg=>+footClearance(a,leg.foot).toFixed(4)),head:a.head.rotation.toArray().slice(0,3),activity:+a.activityWeight.toFixed(3)}))};}
+    diagnostics(){return {...this.state(),presentation,step,workflow,updates,clock:+time.toFixed(3),drawCalls:3,actors:actors.map(a=>({name:a.name,zone:a.zone,position:a.rig.position.toArray(),home:a.home.toArray(),walking:a.walking,footClearance:a.legs.map(leg=>+footClearance(a,leg.foot).toFixed(4)),head:a.head.rotation.toArray().slice(0,3),activity:+a.activityWeight.toFixed(3)}))};}
   };
 }

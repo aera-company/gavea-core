@@ -13,7 +13,7 @@ python3 scripts/serve_demo.py
 O build está incluído em `dist/`. A apresentação funciona localmente sem instalar pacotes. O painel Claude requer uma chave da API Anthropic e internet. ZIPs, backups, vídeos e credenciais locais não são versionados neste repositório.
 
 **ONE GAVEA. ONE DIRECTION.**  
-Uma visão AERA para integrar marketing, tecnologia e crescimento. V0.1.3, com presenças animadas e painel de pedidos ao vivo preparado para Claude, a partir da base de 25/10, para a reunião de 26/10/2026.
+Uma visão AERA para integrar marketing, tecnologia e crescimento. V0.1.4, com presenças animadas e operação visual dos pedidos ao vivo com Claude, a partir da base de 25/10, para a reunião de 26/10/2026.
 
 ## Abrir a demonstração pronta, sem internet
 
@@ -137,7 +137,7 @@ npm run test:demo
 
 ## Pacote para levar à reunião
 
-`GAVEA_BUILD_2030_V0.1.3.zip` reúne código, build, assets, iniciador, documentos, capturas e gravações; exclui `node_modules/`. Descompacte e execute `INICIAR_GAVEA.command` ou `python3 scripts/serve_demo.py` dentro da pasta extraída. O build pronto não precisa instalar dependências. Para uma cópia de vídeo, use `docs/GAVEA-BUILD-2030-demo.mp4`.
+`GAVEA_BUILD_2030_V0.1.4.zip` reúne código, build, assets, iniciador, documentos, capturas e gravações; exclui `node_modules/`. Descompacte e execute `INICIAR_GAVEA.command` ou `python3 scripts/serve_demo.py` dentro da pasta extraída. O build pronto não precisa instalar dependências. Para uma cópia de vídeo, use `docs/GAVEA-BUILD-2030-demo.mp4`.
 
 O refinamento de 26/10 melhora luz, materiais, vegetação, destaque dos núcleos e câmeras. A vista real do escritório não foi incorporada. O pacote anterior V0.1 e um backup das fontes permanecem preservados.
 
@@ -158,3 +158,13 @@ O contexto MERUS pode ser colado no campo opcional. Nenhum catálogo está pré-
 Configuração opcional persistente: copie `.env.example` para `.env.local` e preencha `ANTHROPIC_API_KEY`; esse arquivo é privado, não entra no build nem no pacote. O padrão é `claude-sonnet-5-5`, com `thinking: between_tools`, sem ferramentas. A chave deve estar vinculada a um workspace. **Desconectar** remove a chave da memória; se estiver em arquivo/ambiente, um reinício a carregará novamente.
 
 Detalhes: `docs/LIVE_AI_SETUP.md`. Testes do serviço: `PYTHONDONTWRITEBYTECODE=1 python3 tests/test_live_ai.py` (transporte Anthropic simulado; nenhum gasto). As gravações MP4/WebM documentam o percurso arquitetônico V0.1.2, anterior ao painel ao vivo.
+
+## Operação visível — V0.1.4
+
+Ao enviar um pedido, o diálogo dá lugar ao escritório. O painel acompanha três etapas reais do Claude: elaboração, desenvolvimento e revisão. Os repasses são conteúdo recebido do modelo, sem temporizadores que inventem avanços. Os papéis variam por tipo de pedido: MAYA → NOA → ARI para comunicação, NINA → NOA → ARI para prospecção/vendas e LEO → NINA → ARI para sistemas.
+
+Personagens envolvidos se deslocam no próprio pavimento, gesticulam e recebem marcadores sobre suas posições. Uma linha e um ponto mostram a conexão de trabalho. Movimentos continuam ilustrativos: são três papéis sequenciais do mesmo Claude, sem ferramentas externas. Cada pedido faz **três chamadas cobradas da API**. Uma falha ou recusa interrompe as próximas etapas e conserva o pedido.
+
+No celular, a operação começa recolhida para manter o edifício visível; Expandir mostra os repasses. O botão Agentes e a redução de movimento continuam disponíveis. A resposta final abre em Ver entrega. Detalhes e evidências: `docs/WORKFLOW_V0.1.4.md` e `docs/WORKFLOW_RESULTS.json`.
+
+A versão também funciona com o servidor V0.1.3 já conectado: coordena três chamadas ao endpoint existente e preserva a chave em memória, sem reiniciar o processo. Novas inicializações usam `/api/workflow` com eventos NDJSON.

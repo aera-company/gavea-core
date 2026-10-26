@@ -2,12 +2,14 @@
 import importlib.util
 import json
 import pathlib
+import sys
 import threading
 import unittest
 import urllib.error
 import urllib.request
 from unittest.mock import patch, MagicMock
 
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]/'scripts'))
 spec = importlib.util.spec_from_file_location('gavea_server', pathlib.Path(__file__).resolve().parents[1] / 'scripts/serve_demo.py')
 app = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(app)

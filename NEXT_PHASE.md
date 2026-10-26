@@ -35,3 +35,7 @@ Validar o roteiro com a direção, revisar linguagem com os responsáveis GAVEA 
 ## Implementado na V0.1.3
 
 Primeira ponte de IA para pedidos textuais com Claude e contexto colado. Ainda falta ativar com uma chave real, avaliar o material aprovado MERUS e conduzir um teste completo com o cliente. Os cinco personagens não foram transformados em agentes autônomos.
+
+## Implementado na V0.1.4
+
+Orquestração de três papéis do Claude com repasses reais e apresentação espacial. Um teste neutro real foi concluído. Ainda é necessário inserir o material técnico aprovado do MERUS, avaliar as entregas e validar o roteiro com o cliente. Não há ferramentas externas nem execução autônoma de CRM ou publicação.

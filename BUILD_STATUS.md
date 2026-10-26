@@ -1,4 +1,4 @@
-# BUILD STATUS — GAVEA BUILD 2030 V0.1.3
+# BUILD STATUS — GAVEA BUILD 2030 V0.1.4
 
 Base preparada em 25/10/2026; refinamento validado em 26/10/2026 para a reunião do mesmo dia. Projeto independente em `STUDIO AERA/GAVEA OFFICE/`. Execução local; nenhuma publicação externa realizada.
 
@@ -39,7 +39,7 @@ A vista real enviada em vídeo não foi incorporada, conforme a decisão do usu�
 | Núcleos e estrutura de operação GAVEA | Propostos; não são departamentos existentes confirmados |
 | MAYA, NOA, NINA, LEO e ARI | Nomes/perfis de agentes digitais propostos |
 | Aplicações, entregas e passagem do desafio | Conteúdo predefinido, identificado como DEMO CONCEITUAL |
-| Pedido ao vivo com Claude | Integração implementada; aguardando chave e verificação real |
+| Pedido ao vivo com Claude | Três papéis sequenciais implementados e verificados com resposta real no computador de desenvolvimento |
 | CRM, automação externa, dados GAVEA e resultados comerciais | Não conectados / não produzidos |
 | Reconhecimento de voz | Não implementado; parser recebe texto |
 | Pavilhão da referência | Inspiração visual e fallback; não usado para fingir navegação 3D |
@@ -122,7 +122,7 @@ O build emite aviso de chunk Three.js de 800 kB (aproximadamente 243 kB gzip, in
 - Modelagem procedural estilizada, abaixo do fotorrealismo da referência. Sem GLBs arquitetônicos licenciados fornecidos.
 - Safari nativo não foi automatizado; o teste WebKit valida o motor, não certifica o app Safari. Chrome nativo instalado e Safari da reunião não substituem o Chromium/WebKit de teste.
 - Equipamento e monitor efetivamente usados na reunião ainda precisam de um ensaio local. Medições foram feitas neste Mac.
-- Não há voz nativa, CRM ou acesso automático a dados comerciais. IA depende de chave Claude e conexão de internet; a verificação real ainda está pendente.
+- Não há voz nativa, CRM ou acesso automático a dados comerciais. IA depende de chave Claude e conexão de internet; um fluxo neutro real passou pelas três etapas na V0.1.4.
 - Assets de marca fornecidos foram preservados. O azul é acento de interface proposto, sem manual corporativo disponível para confirmar o valor oficial.
 - A contingência é explicitamente uma imagem, com narrativa navegável; não oferece órbita 3D.
 - A instalação inicial por `npm ci` precisa do registro npm. O build entregue roda com Python 3, sem reinstalação ou internet.
@@ -145,3 +145,11 @@ Ponte HTTP local implementada com Python padrão, sem novas dependências. Anthr
 Dez testes HTTP/contrato passaram em 26/10, com transporte externo simulado. A interface foi conferida com fixture local identificada (envio, espera, ajuste com histórico, erro sem perda de pedido, renderização textual segura, limpeza e desconexão), além de verificação da configuração vazia real em desktop e celular. **Nenhuma chamada real à Anthropic foi feita: não há chave configurada. Não afirmar conexão ativa até o teste real passar.**
 
 Ver `docs/LIVE_AI_SETUP.md` e `docs/LIVE_AI_RESULTS.json`. Gravações anteriores continuam identificadas como registros da V0.1.2.
+
+## Operação visível — V0.1.4
+
+Três papéis sequenciais do Claude geram repasses reais e uma entrega final. UI acompanha os eventos, destaca os personagens e mostra gestos, percursos curtos, marcadores e conexão visual. A atuação espacial é coreografada; não há autonomia ou execução de ferramentas externas. Três chamadas por pedido.
+
+Teste real: MAYA → NOA → ARI, com pedido neutro sobre organização de briefing. A resposta final foi recebida, os dois repasses intermediários ficaram registrados e não houve erros de console. A conexão existente foi preservada pelo caminho de compatibilidade, sem ler ou exportar a chave. O servidor novo oferece NDJSON nativo.
+
+Validação: 10 testes HTTP/contrato, 5 testes de orquestração, parser UTF-8 de eventos, compatibilidade com servidor anterior, controle dos personagens (pausa, redução de movimento, pavimento e retorno), mais conferência visual desktop/celular. Arquivos: `docs/WORKFLOW_RESULTS.json`, `docs/WORKFLOW_BACKEND_TESTS.txt`, capturas 15–17. Não foi repetido o benchmark completo da arquitetura; os resultados de desempenho anteriores continuam históricos.

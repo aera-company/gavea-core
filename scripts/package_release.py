@@ -6,7 +6,7 @@ import zipfile
 
 root = pathlib.Path(__file__).resolve().parents[1]
 version = json.loads((root/'package.json').read_text())['version']
-source = ['index.html','style.css','app.js','ai.js','office.js','agents.js','data.js','package.json','package-lock.json','vite.config.js','scripts/serve_demo.py']
+source = ['index.html','style.css','app.js','ai.js','workflow.js','workflow-roles.json','office.js','agents.js','data.js','package.json','package-lock.json','vite.config.js','scripts/serve_demo.py','scripts/live_workflow.py']
 hashed = [root/name for name in source]+sorted((root/'dist').rglob('*'))
 manifest = {'date':'2026-10-26','version':version,'sha256':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in hashed if p.is_file()}}
 (root/'docs/BUILD_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')

@@ -12,6 +12,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import webbrowser
+from live_workflow import run_workflow
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_MODEL = 'claude-sonnet-5-5'
@@ -84,12 +85,12 @@ class Bridge:
         self.lock = threading.Lock()
 
     def status(self):
-        return {'configured': bool(self.key), 'connected': self.verified, 'model': self.model, 'provider': 'Claude'}
+        return {'configured': bool(self.key), 'connected': self.verified, 'model': self.model, 'provider': 'Claude', 'workflow': True}
 
-    def request(self, key, messages, probe=False):
-        payload = {'model': self.model, 'system': 'Responda apenas OK.' if probe else INSTRUCTIONS,
+    def request(self, key, messages, probe=False, instructions=None, max_tokens=None):
+        payload = {'model': self.model, 'system': 'Responda apenas OK.' if probe else instructions or INSTRUCTIONS,
                    'messages': messages, 'thinking': {'type': 'between_tools'},
-                   'max_tokens': 32 if probe else 1800}
+                   'max_tokens': 32 if probe else max_tokens or 1800}
         req = urllib.request.Request('https://api.anthropic.com/v1/messages',
                                      data=json.dumps(payload).encode(),
                                      headers={'Authorization': 'Bearer ' + key, 'anthropic-version': '2026-10-21', 'Content-Type': 'application/json'}, method='POST')
@@ -168,10 +169,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         acquired = False
+        streaming = False
         try:
             self.local_request(mutation=True)
             path = urllib.parse.urlsplit(self.path).path
-            if path not in ('/api/connect', '/api/chat', '/api/disconnect'):
+            if path not in ('/api/connect', '/api/chat', '/api/workflow', '/api/disconnect'):
                 raise APIError(404, 'Recurso não encontrado.', 'not_found')
             try:
                 length = int(self.headers.get('Content-Length', '0'))
@@ -200,14 +202,32 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             messages = prepare_messages(data)
             if not bridge.key:
                 raise APIError(503, 'Conecte o Claude antes de enviar seu pedido.', 'not_configured')
+            if path == '/api/workflow':
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/x-ndjson; charset=utf-8')
+                self.end_headers()
+                streaming = True
+                for event in run_workflow(bridge, messages, INSTRUCTIONS, APIError, data['messages'][-1]['content']):
+                    self.stream_event(event)
+                return
             result = bridge.request(bridge.key, messages)
             bridge.verified = True
             self.json(200, {**result, 'connected': True})
         except APIError as exc:
-            self.json(exc.status, {'error': exc.message, 'code': exc.code})
+            if streaming:
+                self.stream_event({'type':'error','error':exc.message,'code':exc.code})
+            else:
+                self.json(exc.status, {'error': exc.message, 'code': exc.code})
+        except (BrokenPipeError, ConnectionResetError):
+            # A closed browser stops the loop before the next paid stage.
+            pass
         finally:
             if acquired:
                 bridge.lock.release()
+
+    def stream_event(self, event):
+        self.wfile.write((json.dumps(event, ensure_ascii=False)+'\n').encode())
+        self.wfile.flush()
 
 
 def make_server(port=8086, bridge=None):

@@ -1,6 +1,6 @@
 # Reunião 26/10/2026 — GAVEA BUILD 2030
 
-V0.1.3 funcional e local, refinada em 26/10/2026. O código original do AERA AI OFFICE foi preservado; a nova aplicação está inteiramente nesta pasta.
+V0.1.4 funcional e local, refinada em 26/10/2026. O código original do AERA AI OFFICE foi preservado; a nova aplicação está inteiramente nesta pasta.
 
 ## Abrir
 
@@ -45,10 +45,14 @@ A modelagem procedural é estilizada, sem pretensão de equivaler ao fotorrealis
 
 `BUILD_STATUS.md`, `docs/TEST_RESULTS.json`, `docs/COMPATIBILITY_RESULTS.json`, capturas em `docs/` e inventário em `ASSET_INVENTORY.md`. Fontes e bibliotecas servidas localmente. Código de cena em `office.js`, navegação em `app.js`, conteúdo e parser em `data.js`.
 
-Refinamento final: iluminação de área, destaque por ambiente, madeira, vegetação e câmeras reajustadas. A vista real foi deixada fora do escopo. O pacote atualizado é `GAVEA_BUILD_2030_V0.1.3.zip`; o anterior continua disponível.
+Refinamento final: iluminação de área, destaque por ambiente, madeira, vegetação e câmeras reajustadas. A vista real foi deixada fora do escopo. O pacote atualizado é `GAVEA_BUILD_2030_V0.1.4.zip`; o anterior continua disponível.
 
 Personagens animados: cabeça, postura e gestos, com deslocamentos curtos durante o percurso. O botão Agentes pausa somente as figuras. Pausar a apresentação também as pausa. Movimento reduzido mantém as figuras imóveis. Todos os movimentos são predefinidos, sem execução de tarefas reais.
 
 ## Teste ao vivo com Claude
 
 Abra Pedido ao vivo, insira uma chave de API no próprio painel e clique Conectar e testar. Depois use o exemplo MERUS e acrescente o material aprovado no campo de contexto. O teste consome uma pequena chamada da API; pedidos posteriores usam o saldo Anthropic. Não há catálogo pré-carregado. A integração foi testada com transporte simulado; falta a chave para verificar uma resposta real. Não envie a chave por chat.
+
+## Operação visível — V0.1.4
+
+Enviar pedido fecha o diálogo e mostra os papéis trabalhando no escritório. Os repasses aparecem quando o Claude responde; Ver entrega abre o resultado final. Comunicação usa MAYA → NOA → ARI, com rotas específicas para vendas e sistemas. São três chamadas de IA por pedido. Os movimentos representam as etapas. Um teste neutro real passou pelas três etapas; a conexão Claude já ativa neste computador foi preservada.

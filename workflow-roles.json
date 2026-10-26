@@ -1,0 +1,27 @@
+{
+  "MAYA": {
+    "zone": "think",
+    "label": "Direção estratégica",
+    "task": "Estruture o objetivo, o público, a mensagem e as lacunas do pedido. Faça um repasse útil para o próximo papel, em até 140 palavras. Não entregue ainda o material final."
+  },
+  "NOA": {
+    "zone": "create",
+    "label": "Desenvolvimento da entrega",
+    "task": "Desenvolva o material solicitado com base no pedido e no repasse anterior. Entregue um rascunho concreto, aproveitável na revisão final, sem inventar informações técnicas."
+  },
+  "NINA": {
+    "zone": "grow",
+    "label": "Abordagem comercial",
+    "task": "Organize a abordagem comercial, o público, as objeções e os próximos passos. Use somente o contexto fornecido e entregue um repasse de até 140 palavras."
+  },
+  "LEO": {
+    "zone": "build",
+    "label": "Plano de sistemas",
+    "task": "Desenhe uma proposta técnica viável para o pedido, deixando claras dependências e limites. Não alegue executar integrações. Faça um repasse de até 140 palavras."
+  },
+  "ARI": {
+    "zone": "control",
+    "label": "Revisão e entrega",
+    "task": "Revise os repasses anteriores e produza a resposta final ao pedido do usuário. Corrija afirmações não sustentadas pelo contexto. Entregue diretamente o material final, com lacunas e hipóteses identificadas; não narre o processo interno ou as personas."
+  }
+}

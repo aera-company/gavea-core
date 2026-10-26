@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+(async()=>{let change;const media={matches:false,addEventListener(_,callback){change=callback;}};global.matchMedia=()=>media;
+ const THREE=await import('three'),{createAgentTeam}=await import('../agents.js');const team=createAgentTeam({scene:new THREE.Scene(),contactMaterial:new THREE.MeshBasicMaterial()});let now=performance.now();
+ team.setWorkflow({zone:'think',partnerZone:'create',agent:'MAYA',partner:'NOA'});for(let i=0;i<45;i++)team.update(now+=100,true);
+ let state=team.diagnostics();assert.equal(state.workflow.agent,'MAYA');assert(state.actors.filter(a=>['MAYA','NOA'].includes(a.name)).every(a=>a.activity>.95));assert(state.actors.every(a=>a.position[1]===a.home[1]));assert(state.actors.some(a=>a.position.some((v,i)=>Math.abs(v-a.home[i])>.2)));
+ team.setEnabled(false);state=team.diagnostics();for(let i=0;i<5;i++)team.update(now+=100,true);assert.deepEqual(team.diagnostics().actors,state.actors);
+ team.setEnabled(true);media.matches=true;change();state=team.diagnostics();assert.equal(state.enabled,false);assert(state.actors.every(a=>a.position.every((v,i)=>v===a.home[i])));for(let i=0;i<5;i++)team.update(now+=100,true);assert.deepEqual(team.diagnostics().actors,state.actors);
+ media.matches=false;change();team.setWorkflow(null);for(let i=0;i<45;i++)team.update(now+=100,true);state=team.diagnostics();assert.equal(state.workflow,null);assert(state.actors.every(a=>a.position.every((v,i)=>Math.abs(v-a.home[i])<.001)));
+ console.log('PASS: papéis ativam gestos e percursos, preservam o pavimento, respeitam pausa/redução de movimento e voltam à origem.');
+})().catch(e=>{console.error(e);process.exitCode=1;});
